@@ -43,12 +43,6 @@ void AddressBook::AddPerson(string name, string phone_number) {
   contacts_.push_back(contact);
 }
 
-AddressBook AddressBook::JsonCreate(const char* filename) {
-  AddressBook address_book = AddressBook();
-  address_book.JsonLoad(filename);
-  return address_book;
-}
-
 void AddressBook::JsonSave(const char* filename) {
   ofstream out(filename, ofstream::out);
   Json::Value book_json(Json::arrayValue);

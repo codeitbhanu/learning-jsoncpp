@@ -27,7 +27,6 @@ private:
 public:
   AddressBook();
   vector<Contact> contacts() const;
-  static AddressBook JsonCreate(const char* filename);
   void JsonSave(const char* filename);
   void JsonLoad(const char* filename);
 
