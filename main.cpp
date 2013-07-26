@@ -14,9 +14,9 @@ int main(int argc, char **argv) {
     return 1;
   }
   AddressBook address_book;
-  if (strcmp(argv[1], "load")) {
-    address_book = AddressBook::JsonCreate(argv[2]);
-  } else if (strcmp(argv[1], "save")) {
+  if (strcmp(argv[1], "load") == 0) {
+    address_book.JsonLoad(argv[2]);
+  } else if (strcmp(argv[1], "save") == 0) {
     address_book.AddPerson("Alice", "111-222-3333");
     address_book.AddPerson("Bob", "555-444-3333");
     address_book.JsonSave(argv[2]);
