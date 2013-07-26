@@ -55,4 +55,8 @@ void AddressBook::JsonSave(const char* filename) {
 }
 
 void AddressBook::JsonLoad(const char* filename) {
+  ifstream in(filename);
+  Json::Value book_json;
+  in >> book_json;
+  in.close();
 }
