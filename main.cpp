@@ -1,6 +1,9 @@
+#include <cstring>
 #include <iostream>
 
 #include "addressbook.h"
+
+using namespace std;
 
 int main(int argc, char **argv) {
   if (argc != 3) {
@@ -11,9 +14,9 @@ int main(int argc, char **argv) {
     return 1;
   }
   AddressBook address_book;
-  if (argv[1] == "load") {
+  if (strcmp(argv[1], "load")) {
     address_book = AddressBook::JsonCreate(argv[2]);
-  } else if (argv[1] == "save") {
+  } else if (strcmp(argv[1], "save")) {
     address_book.AddPerson("Alice", "111-222-3333");
     address_book.AddPerson("Bob", "555-444-3333");
     address_book.JsonSave(argv[2]);
