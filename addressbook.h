@@ -2,6 +2,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "json/json.h"
 
@@ -26,9 +27,9 @@ private:
 public:
   AddressBook();
   vector<Contact> contacts() const;
-  static AddressBook JsonCreate(string filename);
-  void JsonSave(string filename);
-  void JsonLoad(string filename);
+  static AddressBook JsonCreate(const char* filename);
+  void JsonSave(const char* filename);
+  void JsonLoad(const char* filename);
 
   void AddPerson(string name, string phone_number);
 };

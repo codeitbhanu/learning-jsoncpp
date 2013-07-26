@@ -36,7 +36,6 @@ vector<Contact> AddressBook::contacts() const {
   return contacts_;
 }
 
-
 void AddressBook::AddPerson(string name, string phone_number) {
   Contact contact = Contact();
   contact.set_name(name);
@@ -44,18 +43,20 @@ void AddressBook::AddPerson(string name, string phone_number) {
   contacts_.push_back(contact);
 }
 
-AddressBook AddressBook::JsonCreate(string filename) {
+AddressBook AddressBook::JsonCreate(const char* filename) {
   AddressBook address_book = AddressBook();
   address_book.JsonLoad(filename);
   return address_book;
 }
 
-void AddressBook::JsonSave(string filename) {  
+void AddressBook::JsonSave(const char* filename) {
+  ofstream out(filename, ofstream::out);
+  Json::Value book_json(Json::arrayValue);
   for (vector<Contact>::iterator it = contacts_.begin(); it != contacts_.end(); ++it) {
-    Json::Value value(Json::objectValue);
-    //out << value;
+    book_json.append((*it).ToJson());
   }
+  out << book_json;
 }
 
-void AddressBook::JsonLoad(string filename) {
+void AddressBook::JsonLoad(const char* filename) {
 }
