@@ -45,11 +45,13 @@ void AddressBook::AddPerson(string name, string phone_number) {
 
 void AddressBook::JsonSave(const char* filename) {
   ofstream out(filename, ofstream::out);
-  Json::Value book_json(Json::arrayValue);
+  Json::Value book_json(Json::objectValue), contacts_json(Json::arrayValue);
   for (vector<Contact>::iterator it = contacts_.begin(); it != contacts_.end(); ++it) {
-    book_json.append((*it).ToJson());
+    contacts_json.append((*it).ToJson());
   }
+  book_json["contacts"] = contacts_json;
   out << book_json;
+  out.close();
 }
 
 void AddressBook::JsonLoad(const char* filename) {
