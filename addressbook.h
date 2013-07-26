@@ -17,6 +17,7 @@ public:
   void set_phone_number(string phone_number);
   string name() const;
   string phone_number() const;
+  Json::Value ToJson() const;
 };
 
 class AddressBook {

@@ -21,6 +21,13 @@ string Contact::phone_number() const {
   return phone_number_;
 }
 
+Json::Value Contact::ToJson() const {
+  Json::Value value(Json::objectValue);
+  value["name"] = name_;
+  value["phone_number"] = phone_number_;
+  return value;
+}
+
 AddressBook::AddressBook() {
   contacts_ = vector<Contact>();
 }
