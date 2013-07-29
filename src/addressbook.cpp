@@ -3,11 +3,11 @@
 Contact::Contact() {
 }
 
-void Contact::set_name(const string& name) {
+void Contact::set_name(const string &name) {
   name_ = name;
 }
 
-void Contact::set_phone_number(const string& phone_number) {
+void Contact::set_phone_number(const string &phone_number) {
   phone_number_ = phone_number;
 }
 
@@ -34,7 +34,7 @@ const vector<Contact>& AddressBook::contacts() const {
   return contacts_;
 }
 
-void AddressBook::AddPerson(string name, string phone_number) {
+void AddressBook::AddPerson(const string &name, const string &phone_number) {
   Contact contact = Contact();
   contact.set_name(name);
   contact.set_phone_number(phone_number);
