@@ -56,6 +56,9 @@ void AddressBook::JsonLoad(const char* filename) {
   ifstream in(filename);
   Json::Value book_json;
   in >> book_json;
+  for (Json::Value::iterator it = book_json["contacts"].begin(); it != book_json["contacts"].end(); ++it) {
+    AddPerson((*it)["name"].asString(), (*it)["phone_number"].asString());
+  }
   in.close();
 }
 
