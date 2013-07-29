@@ -58,3 +58,11 @@ void AddressBook::JsonLoad(const char* filename) {
   in >> book_json;
   in.close();
 }
+
+vector<Contact>::iterator AddressBook::begin() {
+  return contacts_.begin();
+}
+
+vector<Contact>::iterator AddressBook::end() {
+  return contacts_.end();
+}

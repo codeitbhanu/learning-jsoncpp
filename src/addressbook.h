@@ -31,4 +31,6 @@ public:
   void JsonLoad(const char* filename);
 
   void AddPerson(string name, string phone_number);
+  vector<Contact>::iterator begin();
+  vector<Contact>::iterator end();
 };
