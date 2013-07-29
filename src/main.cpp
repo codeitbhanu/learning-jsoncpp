@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
   AddressBook address_book;
   if (strcmp(argv[1], "load") == 0) {
     address_book.JsonLoad(argv[2]);
-    for (vector<Contact>::iterator it = address_book.begin(); it != address_book.end(); ++it) {
+    for (vector<Contact>::const_iterator it = address_book.contacts().begin(); it != address_book.contacts().end(); ++it) {
       cout << (*it).name() << "," << (*it).phone_number() << endl;
     }
   } else if (strcmp(argv[1], "save") == 0) {

@@ -14,10 +14,10 @@ private:
   string phone_number_;
 public:
   Contact();
-  void set_name(string name);
-  void set_phone_number(string phone_number);
-  string name() const;
-  string phone_number() const;
+  void set_name(const string& name);
+  void set_phone_number(const string& phone_number);
+  const string& name() const;
+  const string& phone_number() const;
   Json::Value ToJson() const;
 };
 
@@ -26,11 +26,11 @@ private:
   vector<Contact> contacts_;
 public:
   AddressBook();
-  vector<Contact> contacts() const;
+  const vector<Contact>& contacts() const;
   void JsonSave(const char* filename);
   void JsonLoad(const char* filename);
 
   void AddPerson(string name, string phone_number);
-  vector<Contact>::iterator begin();
-  vector<Contact>::iterator end();
+  const vector<Contact>::iterator& begin();
+  const vector<Contact>::iterator& end();
 };

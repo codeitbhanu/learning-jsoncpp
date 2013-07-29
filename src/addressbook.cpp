@@ -3,19 +3,19 @@
 Contact::Contact() {
 }
 
-void Contact::set_name(string name) {
+void Contact::set_name(const string& name) {
   name_ = name;
 }
 
-void Contact::set_phone_number(string phone_number) {
+void Contact::set_phone_number(const string& phone_number) {
   phone_number_ = phone_number;
 }
 
-string Contact::name() const {
+const string& Contact::name() const {
   return name_;
 }
 
-string Contact::phone_number() const {
+const string& Contact::phone_number() const {
   return phone_number_;
 }
 
@@ -30,7 +30,7 @@ AddressBook::AddressBook() {
   contacts_ = vector<Contact>();
 }
 
-vector<Contact> AddressBook::contacts() const {
+const vector<Contact>& AddressBook::contacts() const {
   return contacts_;
 }
 
@@ -60,12 +60,4 @@ void AddressBook::JsonLoad(const char* filename) {
     AddPerson((*it)["name"].asString(), (*it)["phone_number"].asString());
   }
   in.close();
-}
-
-vector<Contact>::iterator AddressBook::begin() {
-  return contacts_.begin();
-}
-
-vector<Contact>::iterator AddressBook::end() {
-  return contacts_.end();
 }
