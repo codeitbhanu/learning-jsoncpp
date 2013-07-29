@@ -14,8 +14,8 @@ private:
   string phone_number_;
 public:
   Contact();
-  void set_name(const string &name);
-  void set_phone_number(const string &phone_number);
+  void set_name(string const &name);
+  void set_phone_number(string const &phone_number);
   const string& name() const;
   const string& phone_number() const;
   Json::Value ToJson() const;
@@ -30,7 +30,7 @@ public:
   void JsonSave(const char* filename);
   void JsonLoad(const char* filename);
 
-  void AddPerson(const string &name, const string &phone_number);
+  void AddPerson(string const &name, string const &phone_number);
   const vector<Contact>::iterator& begin();
   const vector<Contact>::iterator& end();
 };
