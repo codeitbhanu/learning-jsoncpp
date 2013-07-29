@@ -1,8 +1,6 @@
 #include "addressbook.h"
 
 Contact::Contact() {
-  set_name("unnamed");
-  set_phone_number("000-000-0000");
 }
 
 void Contact::set_name(string name) {
