@@ -1,5 +1,5 @@
 CXX=g++
-FLAGS=-L../libs -I../includes
+FLAGS=-g -L../libs -I../includes
 LIBS=-static -ljson
 SOURCE_FILES=addressbook.cpp main.cpp
 BIN_FILE=../addressbook.out
