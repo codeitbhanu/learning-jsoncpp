@@ -16,6 +16,9 @@ int main(int argc, char **argv) {
   AddressBook address_book;
   if (strcmp(argv[1], "load") == 0) {
     address_book.JsonLoad(argv[2]);
+    for (vector<Contact>::iterator it = address_book.begin(); it != address_book.end(); ++it) {
+      cout << (*it).name() << "," << (*it).phone_number() << endl;
+    }
   } else if (strcmp(argv[1], "save") == 0) {
     address_book.AddPerson("Alice", "111-222-3333");
     address_book.AddPerson("Bob", "555-444-3333");
