@@ -9,8 +9,11 @@ int main(int argc, char **argv) {
   if (argc != 3) {
     cout << "Usage: " << argv[0] << " COMMAND FILENAME" << endl
          << "COMMAND: 'load' or 'save'" << endl
-         << "Load will load the JSON file, FILENAME, and print out its contents." << endl
-         << "Save will save a sample address book to FILENAME in JSON format." << endl;
+         << "load will load the JSON file, FILENAME, and print out its contents." << endl
+         << "save will save a sample address book to FILENAME in JSON format." << endl
+         << endl
+         << "EXAMPLE: " << argv[0] << " save example-address-book.json" << endl
+         << "EXAMPLE: " << argv[0] << " load some-config.json" << endl;
     return 1;
   }
   AddressBook address_book;
