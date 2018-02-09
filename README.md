@@ -11,4 +11,4 @@ GCC-compiled static library. Tested on GNU/Linux.
 
 Compiled using gcc version 4.7.3
 
-Copyright (C) 2013 Rudolf Olah <omouse@gmail.com>
+Copyright (C) 2013-2018 Rudolf Olah
